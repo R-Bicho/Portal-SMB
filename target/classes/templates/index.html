@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <script th:src="@{/main.js}"></script>
+    <title>Home</title>
+</head>
+
+<body onload="ocultar()">
+    <header>
+        <div class="container">
+            <figure>
+                <img th:src="@{/logoTIM.png}" alt="">
+            </figure>
+            <h1>Portal SMB</h1>
+            <h2 th:text="${matricula}"></h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="categoria_falha" id="ajuste_container">
+            <div>
+                <br>
+                <p>Categoria da Origem</p>
+                <input type="radio" id="Voz" name="valor" value="Voz" onclick="text(0)">
+                <label for="Voz">Voz</label>
+                <br>
+                <input type="radio" id="Cobertura/Dados" name="valor" value="Cobertura/Dados" onclick="text(1)">
+                <label for="Cobertura/Dados">Cobertura/Dados</label>
+                <br>
+            </div>
+
+            <div id="Voice">
+                <form method="POST" action="/create">
+                    <div class="input_format">
+                        <br>
+                        <label for="tipo_chamada">Tipo de Falha </label>
+                        <select class="format_campo_input" id="tipo_chamada" name="typeFailure">
+                            <option value="Não Recebe">Não Recebe</option>
+                            <option value="Não Efetua">Não Efetua</option>
+                            <option value="Ambas">Ambas</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="origem_voz">Numero Reclamado</label>
+                        <input class="format_campo_input" type="tel" id="origem_voz" name="originNumber" required
+                                   pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="11 99999-9999">
+                    </div>
+
+                    <div class="input_format">
+                        <label for="destino_voz">Numero de Exemplo</label>
+                        <input class="format_campo_input" type="tel" id="destino_voz" name="destinationNumber" required
+                                   pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="11 99999-9999">
+                    </div>
+                    <div class="input_format">
+                        <label for="informacao_voz">Mensagem de Falha</label>
+                        <input class="format_campo_input" type='text' id='informacao_voz' name='messageFailure' required>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="Roaming_voz1">Cliente está em Roaming? </label>
+                        <select class="format_campo_input" id="Roaming_voz1" name="roaming">
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div id="apenas_dados">
+                <form method="POST" action="/create_dados">
+                    <div class="input_format">
+                        <label for="origem_dados">Numero Reclamado</label>
+                        <input class="format_campo_input" type="tel" id="origem_dados" name="originNumber" required
+                                   pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="11 99999-9999">
+                    </div>
+
+
+                    <div class="input_format">
+                        <label for="informacao_dados">Mensagem de Falha</label>
+                        <input class="format_campo_input" type='text' id='informacao_dados' name="messageFailure" required>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="Endereço_Falha">Endereço da Falha</label>
+                        <input class="format_campo_input" type='text' id='Endereço_Falha' name="address" required>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="Roaming_Dados1">Cliente está em Roaming? </label>
+                        <select class="format_campo_input" id="Roaming_Dados1" name="roaming">
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="teste_chip">Cliente testou chip em outro aparelho? </label>
+                        <select class="format_campo_input" id="teste_chip" name="chipTesting">
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="reiniciou_aparelho">Cliente reiniciou o aparelho? </label>
+                        <select class="format_campo_input" id="reiniciou_aparelho" name="restarted">
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="data">Data da Falha</label>
+                        <input type="date" id="data" name="dateFailure" required>
+                    </div>
+
+                    <div class="input_format">
+                        <label for="hora-desejada">Hora da Falha</label>
+                        <input type="time" id="hora-desejada" name="failureHour" required>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>Copyright &copy;Mobile Services</p>
+    </footer>
+</body>
+</html>

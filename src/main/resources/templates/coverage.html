@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <script th:src="@{/main.js}"></script>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <figure>
+                <img th:src="@{/logoTIM.png}" alt="">
+            </figure>
+            <h1>Portal SMB</h1>
+            <h2 th:text="${matricula}"></h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="mascara" id="mascara_cobertura">
+            <div class="ajuste_mascara">
+                <h1>Mascara de Dados</h1>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Numero Reclamado: </label>
+                <p th:text="${numeroOrigem}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Mensagem de Falha: </label>
+                <p th:text="${mensagemFalha}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Cliente está em Roaming?:  </label>
+                <p th:text="${roaming}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Endereço da Falha: </label>
+                <p th:text="${endereco}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Cliente colocou o chip em outro aparelho?: </label>
+                <p th:text="${testChip}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Cliente reiniciou o aparelho?: </label>
+                <p th:text="${reiniciou}"></p>
+            </div>
+
+            <div class="ajuste_mascara">
+                <label>Data e hora da Falha:  </label>
+                <p th:text="${data}"></p>
+                <p th:text="${hora}"></p>
+            </div>
+            <a class="ajuste_botao" href="/home">Voltar</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy;Mobile Services</p>
+    </footer>
+</body>
+</html>

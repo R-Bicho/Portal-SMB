@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <title>Nova Senha</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <figure>
+                <img th:src="@{/logoTIM.png}" alt="">
+            </figure>
+            <h1>Portal SMB</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="novo">
+
+            <div class="container_form_login">
+                <form action="/escrever-email" method="POST">
+                    <h1 class="estilo_titulos">Alterar Senha</h1>             
+                    
+                    <div class="input_format">
+                        <label for="email">Email</label>
+                        <input class="login" type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="input_format login">
+                        <button type="submit">Enviar</button>
+                    </div>
+                    
+                    <div class="ajuste_ancora_login">
+                        <a class="ajuste_ancora_login" href="/">Voltar</a>
+                    </div>
+                    
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy;Mobile Services</p>
+    </footer>
+</body>
+
+</html>
