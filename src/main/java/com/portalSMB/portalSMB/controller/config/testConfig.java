@@ -1,3 +1,4 @@
+/*
 package com.portalSMB.portalSMB.controller.config;
 
 import com.portalSMB.portalSMB.model.entities.Coverage;
@@ -15,8 +16,8 @@ import org.springframework.context.annotation.Profile;
 import java.util.Arrays;
 import java.util.Date;
 
-@Configuration
-@Profile("test")
+//@Configuration
+//@Profile("test")
 public class testConfig implements CommandLineRunner {
     @Autowired
     private PersonRepository personRepository;
@@ -41,3 +42,4 @@ public class testConfig implements CommandLineRunner {
 
     }
 }
+*/
