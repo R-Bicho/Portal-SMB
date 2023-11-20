@@ -6,7 +6,6 @@ import jakarta.validation.constraints.Size;
 
 import java.io.Serializable;
 @Entity
-@Table(name = "tb_voice")
 public class Voice extends GenericFailure implements Serializable {
     @NotNull
     private String typeFailure;

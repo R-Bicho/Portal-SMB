@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_coverage")
 public class Coverage extends GenericFailure implements Serializable {
     @NotNull
     @Size(min = 20, max = 80, message = "O endereço deve conter entre 20 e 80 caracteres")
